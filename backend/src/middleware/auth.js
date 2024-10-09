@@ -22,7 +22,7 @@ const User=require('../models/user');
      next();
 
    } catch (error) {
-    res.status(404).send('invalid cookie'+error.message);
+    res.status(404).send('error: '+error.message);
    }
 
  }
