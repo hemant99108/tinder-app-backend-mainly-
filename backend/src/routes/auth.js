@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const authRouter=express.Router();
 const User=require('../models/user');
 const { validateSignupData, validateloginData } = require('../utils/validation');
+const { userauth } = require('../middleware/auth');
 
 
 
@@ -72,6 +73,13 @@ authRouter.post("/signup", async (req, res) => {
   
     res.send('Logged out successfully');            
   })
+
+
+  authRouter.get('/feed',userauth,async(req,res)=>{
+    const data=await User.find({});
+
+    res.send(data);
+  });
 
 
 module.exports=authRouter;
