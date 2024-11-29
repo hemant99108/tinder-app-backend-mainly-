@@ -9,7 +9,7 @@ import UserCard from "./UserCard";
 
 
 
-function Feed() {
+ const Feed=()=> {
     const feed=useSelector((store)=>store.feed);
     const dispatch=useDispatch();
 

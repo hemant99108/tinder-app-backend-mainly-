@@ -7,7 +7,7 @@ import {removeUser} from './../utils/userSlice';
 
 
 
-function NavBar() {
+const  NavBar=()=>{
     const user=useSelector((store)=>store.user);
     const dispatch=useDispatch();
     const navigate=useNavigate();
@@ -73,4 +73,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default NavBar;
